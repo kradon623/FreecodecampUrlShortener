@@ -13,7 +13,6 @@ mongoose.connect(process.env.MONGO_URI, {
  .then(() => console.log("Database connected!"))
  .catch(err => console.log(err));
 
-// Basic Configuration
 const port = process.env.PORT;
 app.use(cors());
 
@@ -27,12 +26,6 @@ app.get('/', function(req, res) {
   res.sendFile(process.cwd() + '/views/index.html');
 });
 
-// Your first API endpoint
-app.get('/api', function(req, res) {
-  res.json({ greeting: 'hello API' });
-});
-
-// Empieza la app
 const urlSchema = new mongoose.Schema({
   original_url: String
 });
